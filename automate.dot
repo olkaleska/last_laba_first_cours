@@ -1,0 +1,16 @@
+digraph G {
+    graph [rankdir=LR labelfontcolor=red fontname="monospace" nodesep=1.0 size="7.75,10.25"]
+    node [fontname="monospace" fontsize=11]
+    edge [fontname="monospace" color="grey" fontsize=11]
+
+	UNEXPECTED_EVENT [label="UNEXPECTED_EVENT" shape="circle"]
+	EAT [label="EAT" shape="circle"]
+	SLEEP [label="SLEEP" shape="doublecircle"]
+
+	start -> SLEEP [label="Just sleeping"]
+	SLEEP -> SLEEP [label="Just sleeping"]
+	SLEEP -> EAT [label="Food. Finally!"]
+	EAT -> UNEXPECTED_EVENT [label="Going somewhere cool"]
+	UNEXPECTED_EVENT -> EAT [label="Food. Finally!"]
+	EAT -> SLEEP [label="Just sleeping"]
+}
